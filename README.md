@@ -51,7 +51,7 @@ tests/           unit tests (pytest)
 validation/      scripts that reproduce every validation figure
 data/            published data files, sources in data/SOURCES.md
 docs/            figures
-report/          technical report (LaTeX)
+report/          technical report (LaTeX): main.tex, sections/, appendices/, references.bib
 ```
 
 ## References

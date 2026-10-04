@@ -16,14 +16,16 @@ venv/
 Thumbs.db
 .DS_Store
 
-# LaTeX build artefacts (report is compiled on Overleaf)
-report/*.aux
-report/*.log
-report/*.out
-report/*.toc
-report/*.synctex.gz
-report/*.fdb_latexmk
-report/*.fls
+# LaTeX build artefacts (compiled locally into report/build/, ignored by "build/" above)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
 
 # Personal project plan (read by Claude Code, kept out of the public repo)
 CLAUDE.md

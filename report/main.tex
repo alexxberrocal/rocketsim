@@ -1,12 +1,24 @@
-% Technical report for rocketsim v1. Compiled on Overleaf.
+% Technical report for rocketsim.
+% Build: pdflatex -> bibtex -> pdflatex -> pdflatex (VS Code LaTeX Workshop).
+% Figures are produced by the scripts in validation/ and saved to docs/figures/.
 \documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
 \usepackage[margin=2.5cm]{geometry}
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink]{cleveref}
 
-\title{rocketsim: a validated planar ascent simulator\\with a solid-propellant motor model}
+\graphicspath{{../docs/figures/}}
+
+\title{rocketsim: a validated planar ascent simulator\\
+       with a solid-propellant motor model}
 \author{Àlex Berrocal}
 \date{\today}
 
@@ -14,17 +26,27 @@
 \maketitle
 
 \begin{abstract}
-To be written at the freeze (16--22 November 2026).
+\input{sections/00_abstract}
 \end{abstract}
 
-\section{Introduction}
-\section{Models}
-\subsection{Atmosphere}
-\subsection{Aerodynamics}
-\subsection{Equations of motion}
-\subsection{Solid-propellant motor}
-\section{Validation}
-\section{Limitations}
-\section{Conclusions}
+% Main body: aimed at 12--15 pages, readable on its own.
+\input{sections/01_introduction}
+\input{sections/02_atmosphere}
+\input{sections/03_aerodynamics}
+\input{sections/04_dynamics}
+\input{sections/05_motor}
+\input{sections/06_flight}
+\input{sections/07_limitations}
+\input{sections/08_conclusions}
+
+\nocite{*} % TODO: remove once every reference is cited in the text
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% Appendices: full derivations, validation tables and numerical details.
+\appendix
+\input{appendices/A_derivations}
+\input{appendices/B_validation_tables}
+\input{appendices/C_numerics}
 
 \end{document}
