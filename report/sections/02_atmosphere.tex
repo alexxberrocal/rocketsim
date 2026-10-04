@@ -1,4 +1,17 @@
 \section{Atmosphere model}\label{sec:atmosphere}
-% Phase 1. ISA / U.S. Standard Atmosphere 1976 \cite{ussa1976}: assumptions, layer structure,
-% geopotential vs. geometric altitude, governing equations, validity range.
-% Validation: comparison with tabulated values (figure + max error). Full table in appendix B.
+% Phase 1 (7-25 Oct).
+
+\subsection{Choice of standard atmosphere}
+% ISA vs. U.S. Standard Atmosphere 1976 \cite{ussa1976}: why one is used as the source
+% and in which altitude range the two are identical. Why a 1-D, altitude-only model
+% (no latitude/longitude/season dependence) is the usual choice for ascent simulation.
+\subsection{Geometric and geopotential altitude}
+% What geopotential altitude is, why the standard is defined in it, the conversion
+% formula, and the size of the difference at typical apogees.
+\subsection{Layer structure and governing equations}
+% Hydrostatic equation + ideal gas; gradient vs. isothermal layers; layer table.
+% Full derivation in \cref{app:derivations}.
+\subsection{Range of validity}
+% Altitude range implemented and what happens outside it.
+\subsection{Validation}
+% Figure: model vs. tabulated values; max relative error. Full table in \cref{app:validation}.
