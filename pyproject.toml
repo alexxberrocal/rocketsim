@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rocketsim"
+version = "0.0.1"
+description = "Planar ascent flight simulator with a solid-propellant motor model, validated against analytical solutions, published motor data and OpenRocket."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Àlex Berrocal" }]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
