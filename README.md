@@ -7,15 +7,24 @@ solid-propellant motor model. Every physical model is checked against an
 analytical solution, published data or OpenRocket, and the scripts that
 reproduce each comparison live in [`validation/`](validation/).
 
-> **Status:** phase 0, repository set-up. No physical models are implemented yet.
+> **Status (27 November 2026):** phase 1 in progress. Repository, CI and
+> report outline set up in October 2026; model development started on
+> 23 November 2026 with the atmosphere model (U.S. Standard Atmosphere 1976).
+> No physical model is implemented yet.
+>
+> **Planned:** v0.1, 3-DOF ascent with analytical validations (end of
+> December 2026); v1.0, solid-motor model, comparison with OpenRocket and
+> technical report (February 2027).
 
 ## Goals
 
 - Simulate the ascent of a rocket from launch to ground impact: thrust,
   drag with a Mach-dependent drag coefficient, variable mass and the
   International Standard Atmosphere.
-- Predict a solid motor's thrust curve from its grain geometry and
-  propellant properties, and compare it with a published commercial motor.
+- Predict a solid motor's chamber pressure and thrust curve from its grain
+  geometry and propellant properties; verify it against openMotor and
+  validate it against a published static test whose inputs are all public
+  (R. Nakka's KSB-002).
 - Fly the simulated rocket on the simulated motor and compare apogee and
   burnout velocity with OpenRocket.
 - State clearly what the models do not capture.
@@ -56,9 +65,13 @@ report/          technical report (LaTeX): main.tex, sections/, appendices/, ref
 
 ## References
 
+- COESA, *U.S. Standard Atmosphere, 1976*, NOAA-S/T 76-1562,
+  NOAA, NASA and USAF, Washington, D.C., 1976.
 - M. Martinez-Sanchez, *16.50 Introduction to Propulsion Systems*,
-  MIT OpenCourseWare, Spring 2012.
-- *16.512 Rocket Propulsion*, MIT OpenCourseWare, Fall 2005.
+  MIT OpenCourseWare, Spring 2012 (lecture notes originally by
+  J. L. Kerrebrock).
+- M. Martinez-Sanchez, *16.512 Rocket Propulsion*, MIT OpenCourseWare,
+  Fall 2005.
 
 ## Licence
 
