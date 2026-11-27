@@ -29,3 +29,6 @@ Thumbs.db
 
 # Personal project plan (read by Claude Code, kept out of the public repo)
 CLAUDE.md
+
+# Local copies of reference documents (cited in the report, not redistributed)
+refs/
