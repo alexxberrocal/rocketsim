@@ -12,9 +12,26 @@
 % Hydrostatic equation + ideal gas; gradient vs. isothermal layers; layer table.
 % Full derivation in \cref{app:derivations}.
 \subsection{Range of validity}
-% Altitude range implemented and what happens outside it.
+The model covers geometric altitudes from $-5$ to $80$~km and raises an error
+outside this range instead of extrapolating. The lower limit is where the
+tables of \cite{ussa1976} start; it also leaves a margin below sea level for
+the integrator, which may evaluate the atmosphere slightly below the ground
+while it locates the impact. The upper limit is where the mean molecular
+weight stops being constant. Between 80 and 86~km the standard lowers it by
+up to 0.04\,\%, but its printed tables were computed without that correction
+\cite[p.~9]{ussa1976}, so there the tabulated kinetic temperature departs
+from the model.
+
 \subsection{Validation}
+The model is compared with the printed values of \cite{ussa1976}:
+geopotential altitude, temperature, pressure and density from its Table~I,
+and the speed of sound from its Table~III. The comparison uses 15 geometric
+altitudes: one on each side of every layer boundary, where an error in
+choosing the layer would show, plus $-5$, $0$ and $80$~km. The reference
+values are copied as printed into \texttt{data/ussa1976\_selected\_rows.csv},
+not recomputed from the defining equations, so that a wrong constant in the
+model cannot also hide in the reference values. The tables print each
+quantity with a fixed number of digits, so a computed value passes if it
+differs from the printed one by at most one unit in the last printed digit.
+This tolerance was fixed before the comparison was run.
 % Figure: model vs. tabulated values; max relative error. Full table in \cref{app:validation}.
-% TODO (learning note): the reference values are read from the printed USSA 1976 tables,
-% not recomputed from the defining equations, so the check is independent of the code
-% (a wrong constant would otherwise sit in both the model and the test and go unnoticed).
